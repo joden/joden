@@ -1,0 +1,24 @@
+#!/bin/bash
+PID=$(tail -n 1 /opt/joden/logs/pid.log)
+
+case "$1" in
+	'start')
+		echo -e "\nStarting Joden Server ..."
+			perl /opt/joden/bin/server.pl >> /dev/null
+		echo -e "Done!\n"
+	;;
+
+	'stop')
+		echo -e "\nStopping Joden Server ..."
+			kill $PID >> /dev/null
+		echo -e "Done!\n"
+	;;
+
+	'restart')
+		echo -e "\nRestarting Joden Server ..."
+			kill $PID >> /dev/null
+				perl /opt/joden/bin/server.pl >> /dev/null
+		echo -e "Done!\n"
+	;;
+	esac
+		exit

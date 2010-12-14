@@ -1,0 +1,96 @@
+{
+	"name"   : "test", 
+	"comment": "Some comment to describe the table here.", 
+		"tables" : {
+			"users": {
+				"comment"         : "Example Table 1", 
+				"serial_increment": 3, 
+				"fields"          : {
+					"id": {
+						"comment"   : "Primary ID", 
+						"type"      : "integer", 
+						"decimals"  : null, 
+						"length"    : 255, 
+						"default"   : "not_null", 
+						"allow_null": false, 
+						"serial"    : true, 
+						"special"   : null
+					}, 
+					
+					"username": {
+						"comment"   : "User's Username", 
+						"type"      : "string", 
+						"length"    : 50, 
+						"default"   : null, 
+						"allow_null": true, 
+						"serial"    : false, 
+						"special"   : null
+					}, 
+					
+					"password": {
+						"comment"   : "User's Password", 
+						"type"      : "string", 
+						"length"    : 50, 
+						"default"   : null, 
+						"allow_null": true, 
+						"serial"    : false, 
+						"special"   : "encrypt"
+					}, 
+					
+					"firstname": {
+						"comment"   : "User's First Name", 
+						"type"      : "string", 
+						"length"    : 75, 
+						"default"   : null, 
+						"allow_null": true, 
+						"serial"    : false, 
+						"special"   : null
+					}, 
+					
+					"lastname": {
+						"comment"   : "User's Last Name", 
+						"type"      : "string", 
+						"length"    : 75, 
+						"default"   : null, 
+						"allow_null": true, 
+						"serial"    : false, 
+						"special"   : null
+					}, 
+					
+					"email_address": {
+						"comment"   : "User's Email Address", 
+						"type"      : "string", 
+						"length"    : 250, 
+						"default"   : null, 
+						"allow_null": true, 
+						"serial"    : false, 
+						"special"   : null
+					}
+				}, 
+				"records": [
+					{
+						"id"           : 1, 
+						"username"     : "travis", 
+						"password"     : "travis", 
+						"firstname"    : "Travis", 
+						"lastname"     : "Brown", 
+						"email_address": "travis@test.net"
+					}, {
+						"id"           : 2, 
+						"username"     : "louis", 
+						"password"     : "louis", 
+						"firstname"    : "Louis", 
+						"lastname"     : "Stowasser", 
+						"email_address": "louis@test.net"
+					}, {
+						"id"           : 3, 
+						"username"     : "greg", 
+						"password"     : "greg", 
+						"firstname"    : "Gregory", 
+						"lastname"     : "Milby", 
+						"email_address": "greg@test.net"
+					}
+				]
+			}
+		}
+}

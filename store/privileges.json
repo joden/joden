@@ -1,0 +1,18 @@
+{
+	"root": {
+		"passwd": "Fj8*Qm159788", 
+		"databases": {
+			"all": [
+				"all"
+			]
+		}
+	}, 
+	"demo": {
+		"passwd": "demo12345", 
+		"databases": {
+			"test_database": [
+				"all"
+			]
+		}
+	}
+}

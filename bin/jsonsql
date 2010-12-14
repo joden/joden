@@ -1,0 +1,24 @@
+#!/bin/bash
+PID=$(tail -n 1 /opt/jsonsql/logs/pid.log)
+
+case "$1" in
+	'start')
+		echo "\nStarting JsonSql Server ..."
+			perl /opt/jsonsql/bin/server >> /dev/null
+		echo "Done!\n"
+	;;
+
+	'stop')
+		echo "\nStopping JsonSql Server ..."
+			kill $PID
+		echo "Done!\n"
+	;;
+
+	'restart')
+		echo "\nRestarting JsonSql Server ..."
+			kill $PID
+				perl /opt/jsonsql/bin/server >> /dev/null
+		echo "Done!\n"
+	;;
+	esac
+		exit

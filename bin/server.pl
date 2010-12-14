@@ -3,12 +3,12 @@
 use strict;
 use Socket qw(:DEFAULT :crlf);
 use IO::Socket;
-use lib('/opt/jsonsql/lib');
-use JsonSql;
+use lib('/opt/joden/lib');
+use Joden;
 use JSON;
 use DateTime;
 
-	my($_jsonsql)  = JsonSql->new;
+	my($_joden)   = Joden->new;
 	my($_ip)      = '69.162.168.48';
 	my($_port)    = 1988;
 	my($_docroot) = '/opt/jsonsql';
@@ -80,7 +80,7 @@ use DateTime;
 				print($_client "HTTP/1.0 200 OK", $CRLF);
 				print($_client "Content-type: application/json", $CRLF);
 				print($_client $CRLF);
-				print($_client $_jsonsql->parse($_request{CONTENT}));
+				print($_client $_joden->parse($_request{CONTENT}));
 					
 					$_data{"_status"} = "200";
 			}
@@ -89,7 +89,7 @@ use DateTime;
 				print($_client "HTTP/1.0 200 OK", $CRLF);
 				print($_client "Content-type:  application/json", $CRLF);
 				print($_client $CRLF);
-				print($_client $_jsonsql->parse($_request{CONTENT}));
+				print($_client $_joden->parse($_request{CONTENT}));
 					
 					$_data{"_status"} = "200";
 			} else {

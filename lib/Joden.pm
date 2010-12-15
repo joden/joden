@@ -55,7 +55,11 @@ package Joden;
 				if ($_jql) {
 					if (defined($_jql->{'method'})) {
 						if ($_jql->{'method'} eq 'connect') {
-							
+							return($_self->connect(
+								username => $_jql->{'user'}, 
+								passwd   => $_jql->{'pass'}, 
+								database => $_jql->{'db'}
+							));
 						}
 						
 						if ($_jql->{'method'} eq 'query') {
@@ -117,6 +121,19 @@ package Joden;
 					pretty => 1, 
 					utf8   => 1
 				}));
+			}
+			
+			sub __read_db
+			{
+				my($_self, %_data) = @_;
+				my($_jql);
+				
+				open(DB, '/opt/joden/store/'.$_data{'database'}.'.json', 'r');
+					$_jql = do {
+						local $/;
+							<DB>
+					};
+				close (DB);
 			}
 1;
 __END__
